@@ -6,17 +6,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./dado.component.css']
 })
 export class DadoComponent {
-  num1!:number;
+  num1:number=0;
   numero!:number;
   array:any=[]=[];
   numeroAlzar(){
-    this.numero=Math.ceil(Math.random()*6) ;
-    
+    if(this.num1==0){
+        this.num1=Math.ceil(Math.random()*6);
+        this.numero=this.num1;
+        console.log("a:num1=0 " + this.num1 + " numero se ve " +this.numero);
+    }else if(this.num1!=0){
+      this.num1=Math.ceil(Math.random()*6);
+      if(this.num1!=this.numero){
+        this.numero=this.num1;
+        console.log("b:num1=" + this.num1 + " numero se ve " +this.numero);
+      }else if(this.num1==this.numero){
+        this.num1=Math.ceil(Math.random()*6);
+        this.numero=this.num1;
+        console.log("c:num1=con algo" + this.num1 + " numero se ve " +this.numero);
+      }
+    }else{
+      console.log("ocurrio error" );
+    }
   }
-  /*evitarRepetir(numero:number){
-
-    this.array.push(numero);
-    console.log(this.array)
-  }
-  */
+  
 }
