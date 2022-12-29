@@ -1,8 +1,18 @@
-<div class="container">
+<div class="container mt-5 mb-5">
     <div>
-        <button class="btn btn-primary" (click)="numeroAlzar()">Lanzar Dado</button>
+        <h1 class="text-center">Bienvenidos al Juego del Dado</h1>
+        <h3 class="text-center">Piensa en un deseo y un número al azar del 1 al 6 </h3>
+        <h4 class="text-center">Si sale el número tus deseos se cumpliran !!!</h4>
     </div>
-    <div class="dado">
-        <p>{{numero}}</p>
+    <div class="container d-flex justify-content-center mt-5">
+        <button class="btn btn__girar" (click)="girar()">Lanzar Dado</button>
     </div>
+    <div class="container d-flex justify-content-center p-5 overflow-hidden">
+       <div class="{{escalar}} mt-2">
+            <div class="dado {{rotar}}" id="ctndado">
+                <p class="dado__p ">{{numero}}</p>
+            </div>    
+        </div>
+    </div>
+    
 </div>

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ElementosModule } from './elementos/elementos.module';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ElementosModule } from './elementos/elementos.module';
   ],
   imports: [
     BrowserModule,
-    ElementosModule
+    ElementosModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,4 @@
+import { CssSelector } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,26 +8,34 @@ import { Component } from '@angular/core';
 })
 export class DadoComponent {
   num1:number=0;
-  numero!:number;
-  array:any=[]=[];
+  numero:number=0;
+  rotar="";
+  escalar="";
+  girar(){
+    this.rotar="rotar";
+    this.escalar="escalar";
+    setTimeout(() => {
+      this.rotar="";
+      this.escalar="";
+    }, 1000);
+    this.numeroAlzar();
+  }
   numeroAlzar(){
     if(this.num1==0){
         this.num1=Math.ceil(Math.random()*6);
         this.numero=this.num1;
-        console.log("a:num1=0 " + this.num1 + " numero se ve " +this.numero);
     }else if(this.num1!=0){
       this.num1=Math.ceil(Math.random()*6);
       if(this.num1!=this.numero){
         this.numero=this.num1;
-        console.log("b:num1=" + this.num1 + " numero se ve " +this.numero);
       }else if(this.num1==this.numero){
         this.num1=Math.ceil(Math.random()*6);
         this.numero=this.num1;
-        console.log("c:num1=con algo" + this.num1 + " numero se ve " +this.numero);
       }
     }else{
       console.log("ocurrio error" );
     }
+    
   }
-  
+ 
 }
