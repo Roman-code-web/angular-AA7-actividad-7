@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./dado.component.css']
 })
 export class DadoComponent {
-
+  numero!:number;
+  numeroAlzar(){
+    this.numero=Math.ceil(Math.random()*6) ;
+  }
 }
